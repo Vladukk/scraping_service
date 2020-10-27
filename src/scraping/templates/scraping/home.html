@@ -1,0 +1,27 @@
+
+{% extends "base.html" %}
+{% block title %} Салют {% endblock %}
+{% block content %}
+    {% for obj in object_list %}
+<div class="card my-3">
+  <h5 class="card-header">Вакансия</h5>
+  <div class="card-body">
+      <p>{{obj.city.name }} | {{obj.language.name }} |
+          <small> {{obj.timestamp}} </small>   </p>
+
+    <p class="card-text">{{ obj.title }}</p>
+  </div>
+</div>
+    <p></p>
+    {% endfor %}
+
+<form action="">
+  <label for="fname">Город:</label><br>
+  <input type="text" id="fname" name="fname" value=""><br>
+  <label for="lname">Язык:</label><br>
+  <input type="text" id="lname" name="lname" value=""><br><br>
+  <input type="submit" value="Submit">
+</form>
+{% endblock %}
+
+
